@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  19 DEC 2012 00:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  19 DEC 2012 00:18
 entering extended mode
 **C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
 (C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
@@ -159,7 +159,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 56.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 67.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 69.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
@@ -170,19 +170,19 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <image1.pdf, id=10, 260.53635pt x 62.38908pt>
 File: image1.pdf Graphic file (type pdf)
  <use image1.pdf>
-Package pdftex.def Info: image1.pdf used on input line 175.
+Package pdftex.def Info: image1.pdf used on input line 177.
 (pdftex.def)             Requested size: 241.84842pt x 57.91461pt.
 
 <image3.pdf, id=11, 215.44188pt x 146.72617pt>
 File: image3.pdf Graphic file (type pdf)
  <use image3.pdf>
-Package pdftex.def Info: image3.pdf used on input line 182.
+Package pdftex.def Info: image3.pdf used on input line 184.
 (pdftex.def)             Requested size: 113.81102pt x 77.51149pt.
 
 <image4.pdf, id=12, 231.2389pt x 143.39272pt>
 File: image4.pdf Graphic file (type pdf)
  <use image4.pdf>
-Package pdftex.def Info: image4.pdf used on input line 189.
+Package pdftex.def Info: image4.pdf used on input line 191.
 (pdftex.def)             Requested size: 113.81102pt x 70.57591pt.
 
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2 <C:/Users/P
@@ -205,7 +205,7 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 b8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 96110 bytes).
+Output written on main.pdf (2 pages, 96147 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
