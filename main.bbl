@@ -1,13 +1,26 @@
 \begin{thebibliography}{1}
 
-\bibitem{Lamp86}
-A.B. Smith, C.D. Jones, and E.F. Roberts,
-\newblock ``Article title,''
-\newblock {\em Journal}, vol. 62, pp. 291--294, January 1920.
+\bibitem{FriedmanGMM}
+Nir Friedman and Stuart Russell,
+\newblock ``Image segmentation in video sequences: A probabilistic approach,''
+\newblock 1997, pp. 175--181.
 
-\bibitem{C2}
-C.D. Jones, A.B. Smith, and E.F. Roberts,
-\newblock ``Article title,''
-\newblock in {\em Proceedings Title}. IEEE, 2003, vol.~II, pp. 803--806.
+\bibitem{ZivGMM}
+Z.~Zivkovic,
+\newblock ``Improved adaptive gaussian mixture model for background
+  subtraction,''
+\newblock in {\em Proceedings of the 17th International Conference on Pattern
+  Recognition}, aug. 2004, vol.~2, pp. 28 -- 31 Vol.2.
+
+\bibitem{RPCA09}
+Emmanuel~J. Cand{\`e}s, Xiaodong Li, Yi~Ma, and John Wright,
+\newblock ``Robust principal component analysis?,''
+\newblock {\em CoRR}, vol. abs/0912.3599, 2009.
+
+\bibitem{GRASTA12}
+Jun He, Laura Balzano, and Arthur Szlam,
+\newblock ``Incremental gradient on the grassmannian for online foreground and
+  background separation in subsampled video,''
+\newblock in {\em CVPR}, 2012, pp. 1568--1575.
 
 \end{thebibliography}
