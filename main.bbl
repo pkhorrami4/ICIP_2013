@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{approxMed}
+N.~J.~B. McFarlane and C.~P. Schofield,
+\newblock ``{Segmentation and tracking of piglets in images},''
+\newblock {\em Machine Vision and Applications}, vol. 8, no. 3, pp. 187--193,
+  May 1995.
+
 \bibitem{FriedmanGMM}
 Nir Friedman and Stuart Russell,
 \newblock ``Image segmentation in video sequences: A probabilistic approach,''

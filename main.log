@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  9 JAN 2013 14:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  9 JAN 2013 14:33
 entering extended mode
-**C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
-(C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
+**main.tex
+(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -167,22 +167,24 @@ Underfull \vbox (badness 5431) has occurred while \output is active []
 
 
 ]
-(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2]
+(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2
+
+]
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.aux) ) 
 Here is how much of TeX's memory you used:
  1803 strings out of 494045
- 22674 string characters out of 3148387
- 81766 words of memory out of 3000000
+ 22670 string characters out of 3148387
+ 81759 words of memory out of 3000000
  5101 multiletter control sequences out of 15000+200000
  20281 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,10n,20p,930b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,20p,876b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program F
 iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 63449 bytes).
+Output written on main.pdf (2 pages, 58232 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
