@@ -73,7 +73,7 @@ Although background subtraction via Gaussian Mixture Models enjoys widespread us
 
 When dealing with noisy video sequences, we advocate the use of low-rank subspaces for background subtraction.  Given that each of the video sequences was obtained using a stationary camera, the high level of temporal redundancy between the frames suggests that the backgrounds lie on a low-dimensional subspace. Therefore, foreground activity can be thought of as sparse deviations from said subspace. In this paper, we consider two different subspace estimation algorithms and show empirically how they both achieve superior performance to GMMs on noisy traffic video sequences. 
 
-The first method,  Robust Principal Component Analysis (RPCA or Robust PCA) \cite{RPCA09}, attempts to decompose a data matrix (or video sequence) into a low-rank matrix and a sparse matrix via a convex optimization problem. While typically performed in batch on purely intensity videos, we describe how performing Robust PCA on each of the color channels of video and subsequent post processing via wavelet de-noising leads to additional performance gains. If a user requires a real-time alternative, we also consider the newly proposed Grassmannian Robust Adaptive Subspace Tracking Algorithm (GRASTA) by He et al. \cite{GRASTA12} that learns the aforementioned low-rank subspace by subsampling the video frames and proceeds in an online fashion. 
+The first method,  Robust Principal Component Analysis (RPCA or Robust PCA) \cite{RPCA09}, attempts to represent a data matrix (or video sequence) as the sum of a low-rank matrix and a sparse matrix via a convex optimization problem. While typically performed in batch on purely intensity videos, we describe how performing Robust PCA on each of the color channels of video and using a reduced number of frames leads to additional performance gains. If a user requires a real-time alternative, we also consider the newly proposed Grassmannian Robust Adaptive Subspace Tracking Algorithm (GRASTA) by He et al. \cite{GRASTA12} that learns the aforementioned low-rank subspace by subsampling the video frames and proceeds in an online fashion. 
 
 The remainder of this paper is organized as follows. Section 2 will describe the improvements made to the batch Robust PCA algorithm. Section 3 will present our experimental setup and findings. Section 4 will describe our conclusions and directions for future work.
 
@@ -87,68 +87,85 @@ The remainder of this paper is organized as follows. Section 2 will describe the
 \section{Method Description}
 %\label{sec:format}
 
-Traditionally, when given a video sequence, Robust PCA
-
-Up until now, there has been very little work that investigates the gohadigohaoig
-
-
 \begin{figure*}[htb]
 
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/Orig_0412041242.jpg}}
+  \centerline{\includegraphics[width=5.55cm, height=3cm]{Imgs/Orig_0412041242.jpg}}
 %  \vspace{2.0cm}
   \centerline{(a) Original Image}\medskip
 \end{minipage}
 %
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/SP_Intensity_0412041242}}
+  \centerline{\includegraphics[width=5.55cm, height=3cm]{Imgs/SP_Intensity_0412041242}}
 %  \vspace{1.5cm}
   \centerline{(b) Intensity Sparse Image}\medskip
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/SP_IMG_R_0412041242.jpg}}
+  \centerline{\includegraphics[width=5.55cm, height=3cm]{Imgs/SP_IMG_R_0412041242.jpg}}
 %  \vspace{1.5cm}
   \centerline{(c) Red Channel Sparse Image}\medskip
 \end{minipage}
 %
-\caption{Visual Comparison of Robust PCA on Intensity and a Color Channel}
+\caption{Visual Comparison of Robust PCA on the Intensity Channel  and the Red Color Channel}
 \label{fig:colorComp}
 %
 \end{figure*}
-
-
 
 \begin{figure*}[htb]
 
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/Orig_1228021540.jpg}}
+  \centerline{\includegraphics[width=5.55cm, height=3cm]{Imgs/Orig_1228021540.jpg}}
 %  \vspace{2.0cm}
   \centerline{(a) Original Image}\medskip
 \end{minipage}
 %
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/SP_IMG_R_1228021540.jpg}}
+  \centerline{\includegraphics[width=5.55cm, height=3cm]{Imgs/SP_IMG_R_1228021540.jpg}}
 %  \vspace{1.5cm}
   \centerline{(b) Robust PCA Sparse Image}\medskip
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.3333\linewidth}
   \centering
-  \centerline{\includegraphics[width=5.55cm]{Imgs/SP_IMG_Reduced_1228021540.jpg}}
+  \centerline{\includegraphics[width=5.55cm, height = 3cm]{Imgs/SP_IMG_Reduced_1228021540.jpg}}
 %  \vspace{1.5cm}
   \centerline{(c) Reduced Robust PCA Sparse Image}\medskip
 \end{minipage}
 %
 \caption{Reduced Frames Comparison}
-\label{fig:interleaveComp}
+\label{fig:reduceComp}
 %
 \end{figure*}
+
+
+When given a data matrix M, the goal of Robust PCA is to decompose it into a low-rank matrix L and a sparse matrix S. To do this, each of the video frames is vectorized and stacked as a column in the matrix M. Upon closer inspection, one will notice that the columns are highly correlated. This is expected considering that the video was obtained using a stationary camera. Given that the background of a video lies on a low-dimensional subspace, we will see that the columns of L contain the background of each video frame and S contains the sparse deviations from that background or foreground. Therefore, when doing background subtraction, one simply performs Robust PCA on the entire sequence and does further processing solely on the sparse error frames.
+
+
+\subsection{Robust PCA on Individual Color Channels}
+
+While many works acknowledge the merit of using Robust PCA for background subtraction, very few have introduced modifications to improve foreground detection. As such we consider performing Robust PCA on all three of the color channels of a video sequence rather than just on the intensity channel. Now for each frame we have three sparse responses corresponding to each of the color channels. To ensure that an object detected with high confidence in one color channel is maintained in the final result, we take the maximum response across the three color channels.
+
+Consider the images in figure \ref{fig:colorComp}. After Robust PCA is performed on the intensity channel of the video sequence, we see in figure \ref{fig:colorComp}b that several of the moving cars can be easily separated from the background using their intensities. The red car, however, does not seem to stand out  from the background intensity. On the other hand, when considering the image in figure \ref{fig:colorComp}c, we see that doing Robust PCA on the red color channel makes the red car very distinguishable. Given that we also take the maximum response across all the color channels, this high response will remain intact when extracting a foreground mask.
+
+\subsection{Reducing Number of Frames and Post-Processing}
+
+Now that we have a protocol in place to better detect colored objects, we turn our attention to detecting objects that have stopped moving. Ordinarily when a object has been stationary for a long period of time, the background subtraction algorithm considers it to be a part of the background. Similarly with  Robust PCA, when an object is stationary it is no longer considered a sparse corruption of the background. Rather it is considered a basis element of the low-rank subspace and enters the frame's background. In figure 2, the cars shown in figure \ref{fig:reduceComp}a have been stationary for some time, therefore they are no longer considered foreground and appear very faintly in figure \ref{fig:reduceComp}b.
+ 
+In order to prevent this from happening, we reduce the number of frames used when computing Robust PCA by taking frames spaced 10 frames apart. By reducing the number of frames in which the stationary object appears, we are making the object look like sparse corruption and thereby making it less likely to enter the low-rank subspace that represents the background. The appearance of the two stationary cars in Figure \ref{fig:reduceComp}c verifies our hypothesis. The reader may have noticed that by using a reduced number of frames in Robust PCA, the remaining frames will not have a low-rank and sparse component. this is not a problem given the scene was captured using a stationary camera. For each frame, we can simply take the nearest background image and subtract it to extract its sparse component.
+
+After obtaining the sparse component of each video frame, we notice that they possess a fair amount of speckled noise. A classical approach to de-noising an image is through shrinking the wavelet coefficients via a hard or soft threshold \cite{Donoho95}. We apply a hard threshold to each sparse image to obtain a smoother response to be used during evaluation.
+
+%\subsection
+
+
+
+
 
 
 

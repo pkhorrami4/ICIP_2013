@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  9 JAN 2013 23:04
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  10 JAN 2013 11:25
 entering extended mode
 **C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
 (C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
@@ -183,25 +183,25 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 File: Imgs/Orig_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/Orig_0412041242.jpg>
-Package pdftex.def Info: Imgs/Orig_0412041242.jpg used on input line 99.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+Package pdftex.def Info: Imgs/Orig_0412041242.jpg used on input line 94.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_Intensity_0412041242.jpg, id=2, 353.32pt x 240.9pt>
 File: Imgs/SP_Intensity_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/SP_Intensity_0412041242.jpg>
 Package pdftex.def Info: Imgs/SP_Intensity_0412041242.jpg used on input line 10
-6.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+1.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_IMG_R_0412041242.jpg, id=3, 353.32pt x 240.9pt>
 File: Imgs/SP_IMG_R_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_R_0412041242.jpg>
-Package pdftex.def Info: Imgs/SP_IMG_R_0412041242.jpg used on input line 113.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+Package pdftex.def Info: Imgs/SP_IMG_R_0412041242.jpg used on input line 108.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
-Overfull \hbox (3.74591pt too wide) in paragraph at lines 97--118
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 92--113
 [][] []  [] 
  []
 
@@ -209,25 +209,25 @@ Overfull \hbox (3.74591pt too wide) in paragraph at lines 97--118
 File: Imgs/Orig_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/Orig_1228021540.jpg>
-Package pdftex.def Info: Imgs/Orig_1228021540.jpg used on input line 129.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+Package pdftex.def Info: Imgs/Orig_1228021540.jpg used on input line 122.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_IMG_R_1228021540.jpg, id=5, 353.32pt x 240.9pt>
 File: Imgs/SP_IMG_R_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_R_1228021540.jpg>
-Package pdftex.def Info: Imgs/SP_IMG_R_1228021540.jpg used on input line 136.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+Package pdftex.def Info: Imgs/SP_IMG_R_1228021540.jpg used on input line 129.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_IMG_Reduced_1228021540.jpg, id=6, 353.32pt x 240.9pt>
 File: Imgs/SP_IMG_Reduced_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_Reduced_1228021540.jpg>
 Package pdftex.def Info: Imgs/SP_IMG_Reduced_1228021540.jpg used on input line 
-143.
-(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+136.
+(pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
-Overfull \hbox (3.74591pt too wide) in paragraph at lines 127--148
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 120--141
 [][] []  [] 
  []
 
@@ -235,32 +235,37 @@ Overfull \hbox (3.74591pt too wide) in paragraph at lines 127--148
 
 
 
+] [2 <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/Orig_041204124
+2.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_Intensity
+_0412041242.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP
+_IMG_R_0412041242.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/I
+mgs/Orig_1228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013
+/Imgs/SP_IMG_R_1228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICI
+P_2013/Imgs/SP_IMG_Reduced_1228021540.jpg>]
+Underfull \hbox (badness 1019) in paragraph at lines 162--163
+[]\OT1/ptm/m/n/10 After ob-tain-ing the sparse com-po-nent of each video
+ []
+
+(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [3
+
 ]
-(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2 <C:/Users/P
-ooya/Documents/Research/My_Papers/ICIP_2013/Imgs/Orig_0412041242.jpg> <C:/Users
-/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_Intensity_0412041242.jpg>
- <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_IMG_R_041204124
-2.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/Orig_1228021
-540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_IMG_R_1
-228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_I
-MG_Reduced_1228021540.jpg>]
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.aux) ) 
 Here is how much of TeX's memory you used:
- 1999 strings out of 494045
- 25881 string characters out of 3148387
- 84602 words of memory out of 3000000
- 5282 multiletter control sequences out of 15000+200000
+ 2000 strings out of 494045
+ 25887 string characters out of 3148387
+ 85605 words of memory out of 3000000
+ 5283 multiletter control sequences out of 15000+200000
  20281 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,10n,24p,924b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,24p,924b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program F
 iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 125500 bytes).
+Output written on main.pdf (3 pages, 131729 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

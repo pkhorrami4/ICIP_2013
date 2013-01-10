@@ -36,4 +36,10 @@ Jun He, Laura Balzano, and Arthur Szlam,
   background separation in subsampled video,''
 \newblock in {\em CVPR}, 2012, pp. 1568--1575.
 
+\bibitem{Donoho95}
+David Donoho and Iain~M. Johnstone,
+\newblock ``Adapting to unknown smoothness via wavelet shrinkage,''
+\newblock {\em Journal of the American Statistical Association}, vol. 90, pp.
+  1200--1224, 1995.
+
 \end{thebibliography}
