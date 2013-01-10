@@ -11,6 +11,13 @@ Nir Friedman and Stuart Russell,
 \newblock ``Image segmentation in video sequences: A probabilistic approach,''
 \newblock 1997, pp. 175--181.
 
+\bibitem{StaufferGMM}
+C.~Stauffer and W.~E.~L. Grimson,
+\newblock ``{Adaptive background mixture models for real-time tracking},''
+\newblock in {\em Computer Vision and Pattern Recognition, 1999. IEEE Computer
+  Society Conference on.}, Los Alamitos, CA, USA, Aug. 1999, vol.~2, pp.
+  246--252 Vol. 2, IEEE.
+
 \bibitem{ZivGMM}
 Z.~Zivkovic,
 \newblock ``Improved adaptive gaussian mixture model for background

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  9 JAN 2013 14:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  9 JAN 2013 23:04
 entering extended mode
-**main.tex
-(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.tex
+**C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
+(C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -121,6 +121,26 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip46
+\subfigcapskip=\skip47
+\subfigcaptopadj=\dimen114
+\subfigbottomskip=\skip48
+\subfigcapmargin=\dimen115
+\subfiglabelskip=\skip49
+\c@subfigure=\count100
+\c@lofdepth=\count101
+\c@subtable=\count102
+\c@lotdepth=\count103
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip50
+\subfig@bottom=\skip51
+)
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
@@ -141,16 +161,16 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
-\scratchdimen=\dimen114
+\scratchcounter=\count104
+\scratchdimen=\dimen116
 \scratchbox=\box28
-\nofMPsegments=\count101
-\nofMParguments=\count102
+\nofMPsegments=\count105
+\nofMParguments=\count106
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count103
-\MPscratchDim=\dimen115
-\MPnumerator=\count104
-\makeMPintoPDFobject=\count105
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen117
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks21
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -159,34 +179,88 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 58.
+ <Imgs/Orig_0412041242.jpg, id=1, 353.32pt x 240.9pt>
+File: Imgs/Orig_0412041242.jpg Graphic file (type jpg)
 
-Underfull \vbox (badness 5431) has occurred while \output is active []
+<use Imgs/Orig_0412041242.jpg>
+Package pdftex.def Info: Imgs/Orig_0412041242.jpg used on input line 99.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
 
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+<Imgs/SP_Intensity_0412041242.jpg, id=2, 353.32pt x 240.9pt>
+File: Imgs/SP_Intensity_0412041242.jpg Graphic file (type jpg)
+
+<use Imgs/SP_Intensity_0412041242.jpg>
+Package pdftex.def Info: Imgs/SP_Intensity_0412041242.jpg used on input line 10
+6.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+
+<Imgs/SP_IMG_R_0412041242.jpg, id=3, 353.32pt x 240.9pt>
+File: Imgs/SP_IMG_R_0412041242.jpg Graphic file (type jpg)
+
+<use Imgs/SP_IMG_R_0412041242.jpg>
+Package pdftex.def Info: Imgs/SP_IMG_R_0412041242.jpg used on input line 113.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 97--118
+[][] []  [] 
+ []
+
+<Imgs/Orig_1228021540.jpg, id=4, 353.32pt x 240.9pt>
+File: Imgs/Orig_1228021540.jpg Graphic file (type jpg)
+
+<use Imgs/Orig_1228021540.jpg>
+Package pdftex.def Info: Imgs/Orig_1228021540.jpg used on input line 129.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+
+<Imgs/SP_IMG_R_1228021540.jpg, id=5, 353.32pt x 240.9pt>
+File: Imgs/SP_IMG_R_1228021540.jpg Graphic file (type jpg)
+
+<use Imgs/SP_IMG_R_1228021540.jpg>
+Package pdftex.def Info: Imgs/SP_IMG_R_1228021540.jpg used on input line 136.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+
+<Imgs/SP_IMG_Reduced_1228021540.jpg, id=6, 353.32pt x 240.9pt>
+File: Imgs/SP_IMG_Reduced_1228021540.jpg Graphic file (type jpg)
+
+<use Imgs/SP_IMG_Reduced_1228021540.jpg>
+Package pdftex.def Info: Imgs/SP_IMG_Reduced_1228021540.jpg used on input line 
+143.
+(pdftex.def)             Requested size: 157.91287pt x 107.66882pt.
+
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 127--148
+[][] []  [] 
+ []
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 
 ]
-(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2
-
-]
+(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [2 <C:/Users/P
+ooya/Documents/Research/My_Papers/ICIP_2013/Imgs/Orig_0412041242.jpg> <C:/Users
+/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_Intensity_0412041242.jpg>
+ <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_IMG_R_041204124
+2.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/Orig_1228021
+540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_IMG_R_1
+228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/SP_I
+MG_Reduced_1228021540.jpg>]
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.aux) ) 
 Here is how much of TeX's memory you used:
- 1803 strings out of 494045
- 22670 string characters out of 3148387
- 81759 words of memory out of 3000000
- 5101 multiletter control sequences out of 15000+200000
+ 1999 strings out of 494045
+ 25881 string characters out of 3148387
+ 84602 words of memory out of 3000000
+ 5282 multiletter control sequences out of 15000+200000
  20281 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,10n,20p,876b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,24p,924b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program F
 iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 58232 bytes).
+Output written on main.pdf (2 pages, 125500 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
