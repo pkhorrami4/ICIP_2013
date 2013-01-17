@@ -12,7 +12,7 @@
 
 % Title.
 % ------
-\title{Advantages of Subspace Estimation Techniques over Gaussian Mixture Models for Background Subtraction of Noisy Videos}
+\title{Advantages of Subspace Estimation Techniques over Gaussian Mixture Models for Background Subtraction in Noisy Videos}
 %
 % Single address.
 % ---------------
@@ -46,28 +46,22 @@
 \maketitle
 %
 \begin{abstract}
-The abstract should appear at the top of the left-hand column of text, about
-0.5 inch (12 mm) below the title area and no more than 3.125 inches (80 mm) in
-length.  Leave a 0.5 inch (12 mm) space between the end of the abstract and the
-beginning of the main text.  The abstract should contain about 100 to 150
-words, and should be identical to the abstract text submitted electronically
-along with the paper cover sheet.  All manuscripts must be in English, printed
-in black ink.
+Gaussian Mixture Models (GMMs) are one of the most popular methods used for background subtraction in video processing today. However, noisy or low-quality videos make learning the underlying background model difficult and often lead to inaccurate foreground masks. To combat this, we propose representing the background using a low-rank subspace. In this paper, we show how subspace estimation techniques such as Robust Principal Component Analysis (Robust PCA) and the Grassmannian Robust Subspace Tracking Algorithm  (GRASTA) outperform Gaussian Mixture Models on noisy traffic video sequences.
 \end{abstract}
 %
 \begin{keywords}
-One, two, three, four, five
+Robust PCA, Subspace Estimation,  Subtraction Techniques, Image Analysis, Object Detection
 \end{keywords}
 %
 
-%\vspace{0.5in}
+\vspace{0.1in}
 
 \section{Introduction}
 %\label{sec:intro}
-In the field of video surveillance, the user typically wishes to extract meaningful and salient information from a video sequence in a completely automatic fashion. In several instances, the video sequences are captured using stationary cameras leading to a relatively static scene layout. The absence of camera motion implies that the background of the video sequence exhibits very little variation while dynamic changes in the scene represent the objects of interest. In such a case, the most common approach is to perform background subtraction to separate said dynamic regions (i.e. foreground) from the background of each frame.
+In the field of video surveillance, the user typically wishes to extract meaningful and salient information from a video sequence in a completely automatic fashion. In several instances, the video sequences are captured using stationary cameras leading to a relatively static scene layout. The absence of camera motion implies that the background of the video sequence exhibits very little variation while dynamic changes in the scene represent the objects of interest. In such cases, the most common approach is to perform background subtraction to separate said dynamic regions (i.e. foreground) from the background of each frame.
 
 When performing background subtraction, some na\"ive methods include frame differencing and approximate median \cite{approxMed}. %Frame difference simply subtracts the current frame from the previous frame and the pixels where the difference exceeds a threshold are marked as foreground. The approximate median technique, on the other hand, models the background as the median of several past frames in the sequence. This median image is then subtracted from subsequent frames and pixels whose difference exceed a threshold are marked foreground. 
-While these algorithms are simple to use and quite efficient, the most popular technique, by far, is adaptive  Gaussian Mixture Models (GMMs) \cite{FriedmanGMM, StaufferGMM}. These works posit that each pixel in the background image can be represented by a probability distribution formed by a mixture of Gaussians. If a pixel greatly deviates from its corresponding model, then the pixel is labeled foreground. While the number of Gaussians used at each pixel is usually fixed, there has been some work \cite{ZivGMM} that adaptively selects the number of mixture components.
+While these algorithms are simple to use and quite efficient, the most popular technique, by far, is adaptive  Gaussian Mixture Models (GMMs) \cite{FriedmanGMM, StaufferGMM}. These works posit that each pixel in the background image can be represented by a probability distribution formed by a mixture of Gaussians. If a pixel greatly deviates from its corresponding model, then the pixel is labeled foreground. While the number of Gaussians used at each pixel is usually fixed, there has been some work \cite{ZivGMM} that shows how the number of mixture components can be chosen adaptively.
 
 Although background subtraction via Gaussian Mixture Models enjoys widespread use in the computer vision community, it is not without drawbacks. As opposed to the frame differencing and approximate median techniques, GMMs possess several parameters that must be individually tuned. This implies that the algorithm is innately sensitive to different scene configurations. Therefore it should be no surprise that GMMs tend to perform rather poorly on noisy videos where the foreground objects are not immediately distinguishable. 
 
@@ -112,6 +106,7 @@ The remainder of this paper is organized as follows. Section 2 will describe the
 %
 \caption{Visual Comparison of Robust PCA on the Intensity Channel  and the Red Color Channel}
 \label{fig:colorComp}
+\medskip
 %
 \end{figure*}
 
@@ -155,13 +150,85 @@ Consider the images in figure \ref{fig:colorComp}. After Robust PCA is performed
 
 \subsection{Reducing Number of Frames and Post-Processing}
 
-Now that we have a protocol in place to better detect colored objects, we turn our attention to detecting objects that have stopped moving. Ordinarily when a object has been stationary for a long period of time, the background subtraction algorithm considers it is considered to be a part of the background. Similarly with  Robust PCA, when an object is stationary it is no longer considered a sparse corruption of the background. Rather, it is considered a basis element of the low-rank subspace and enters the frame's background. In figure 2, the cars shown in figure \ref{fig:reduceComp}a have been stationary for some time, therefore they are no longer considered foreground and appear very faintly in figure \ref{fig:reduceComp}b.
+Now that we have a protocol in place to better detect colored objects, we turn our attention to detecting objects that have stopped moving. Ordinarily when a object has been stationary for a long period of time, the background subtraction algorithm considers it  to be a part of the background. Similarly with  Robust PCA, when an object is stationary it is no longer considered a sparse corruption. Rather, it is considered a basis element of the low-rank subspace and enters the frame's background. In figure 2, the cars shown in figure \ref{fig:reduceComp}a have been stationary for some time, therefore they are no longer considered foreground and appear very faintly in the sparse component, show in figure \ref{fig:reduceComp}b.
  
-In order to prevent this from happening, we reduce the number of frames used when computing Robust PCA by taking frames spaced 10 frames apart. By reducing the number of frames in which the stationary object appears, we are making the object look like sparse corruption and thereby making it less likely to enter the low-rank subspace that represents the background. The appearance of the two stationary cars in figure \ref{fig:reduceComp}c verifies our hypothesis. The reader may have noticed that by using a reduced number of frames in Robust PCA, the remaining frames will not have their own low-rank and sparse component. This is not a problem given that the scene was captured using a stationary camera. For each frame, we can simply take the nearest background image and subtract it to extract the sparse component.
+In order to prevent this from happening, we reduce the number of frames used when computing Robust PCA by taking frames in intervals of 10 By reducing the number of frames in which the stationary object appears, we are making the object look like a sparse corruption and therefore less likely to enter the low-rank subspace modeling the background. The appearance of the two stationary cars in figure \ref{fig:reduceComp}c verifies our hypothesis. The reader may have noticed that by using a reduced number of frames in Robust PCA, the remaining frames will not have their own low-rank and sparse components. This is not a problem given that the scene was captured using a stationary camera. For each frame, we can simply take the nearest background image and subtract it to extract the sparse component.
 
 After obtaining the sparse component of each video frame, we notice that they possess a fair amount of speckled noise. A classical approach to de-noising an image is through shrinking the wavelet coefficients via a hard or soft threshold \cite{Donoho95}. We apply a hard threshold to each sparse image to obtain a smoother response to be used during evaluation.
 
-%\subsection
+
+\begin{figure}[t]
+
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0112051333.png}}
+%  \vspace{2.0cm}
+  \centerline{(a) Ground Truth Labels}\medskip
+\end{minipage}
+%\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0112051333_gmm_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(b) GMM Result}\medskip
+\end{minipage}
+
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height =3cm]{Imgs/0112051333_rpca_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(c) RPCA Result}\medskip
+\end{minipage}
+%\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height = 3cm]{Imgs/0112051333_rpca_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(d) GRASTA Result}\medskip
+\end{minipage}
+
+\caption{Method Comparison I}
+\label{fig:methodComp1}
+%
+\end{figure}
+
+
+\begin{figure}[t]
+
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0114020855.png}}
+%  \vspace{2.0cm}
+  \centerline{(a) Ground Truth Labels}\medskip
+\end{minipage}
+%\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0114020855_gmm_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(b) GMM Result}\medskip
+\end{minipage}
+
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height =3cm]{Imgs/0114020855_rpca_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(c) RPCA Result}\medskip
+\end{minipage}
+%\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4cm, height = 3cm]{Imgs/0114020855_rpca_rwg.png}}
+%  \vspace{1.5cm}
+  \centerline{(d) GRASTA Result}\medskip
+\end{minipage}
+
+\caption{Method Comparison II}
+\label{fig:methodComp2}
+%
+\end{figure}
+
+
 
 
 
@@ -171,6 +238,8 @@ After obtaining the sparse component of each video frame, we notice that they po
 
 \section{Experimental Results}
 %\label{sec:pagestyle}
+
+
 
 (Cite Toyota Dataset?)
 
