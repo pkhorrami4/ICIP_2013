@@ -42,4 +42,10 @@ David Donoho and Iain~M. Johnstone,
 \newblock {\em Journal of the American Statistical Association}, vol. 90, pp.
   1200--1224, 1995.
 
+\bibitem{alm}
+Zhouchen Lin, Minming Chen, Leqin Wu, and Yi~Ma,
+\newblock ``{The Augmented Lagrange Multiplier Method for Exact Recovery of
+  Corrupted Low-Rank Matrices},''
+\newblock {\em Mathematical Programming}, 2010.
+
 \end{thebibliography}
