@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  19 JAN 2013 13:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  20 JAN 2013 10:41
 entering extended mode
 **C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
 (C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
@@ -309,23 +309,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl) [3 <C:/Users/P
-ooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0112051333.png (PNG copy)> <C:
-/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0112051333_gmm_rwg.png
- (PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/011205
-1333_rpca_rwg.png (PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP
-_2013/Imgs/0112051333_grasta_rwg.png (PNG copy)> <C:/Users/Pooya/Documents/Rese
-arch/My_Papers/ICIP_2013/Imgs/0412041242.png (PNG copy)> <C:/Users/Pooya/Docume
-nts/Research/My_Papers/ICIP_2013/Imgs/0412041242_gmm_rwg.png (PNG copy)> <C:/Us
-ers/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0412041242_rpca_rwg.png (
-PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/04120412
-42_grasta_rwg.png (PNG copy)>]
+<Imgs/ROC_comp_curve_zoom.jpg, id=26, 927.465pt x 608.2725pt>
+File: Imgs/ROC_comp_curve_zoom.jpg Graphic file (type jpg)
+
+<use Imgs/ROC_comp_curve_zoom.jpg>
+Package pdftex.def Info: Imgs/ROC_comp_curve_zoom.jpg used on input line 251.
+(pdftex.def)             Requested size: 227.62009pt x 170.71423pt.
+
+(C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl [3 <C:/Users/Po
+oya/Documents/Research/My_Papers/ICIP_2013/Imgs/0112051333.png (PNG copy)> <C:/
+Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0112051333_gmm_rwg.png 
+(PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0112051
+333_rpca_rwg.png (PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_
+2013/Imgs/0112051333_grasta_rwg.png (PNG copy)> <C:/Users/Pooya/Documents/Resea
+rch/My_Papers/ICIP_2013/Imgs/0412041242.png (PNG copy)> <C:/Users/Pooya/Documen
+ts/Research/My_Papers/ICIP_2013/Imgs/0412041242_gmm_rwg.png (PNG copy)> <C:/Use
+rs/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/0412041242_rpca_rwg.png (P
+NG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/041204124
+2_grasta_rwg.png (PNG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_
+2013/Imgs/ROC_comp_curve_zoom.jpg>]) [4
+
+]
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.aux) ) 
 Here is how much of TeX's memory you used:
- 2043 strings out of 494045
- 27078 string characters out of 3148387
- 85624 words of memory out of 3000000
- 5318 multiletter control sequences out of 15000+200000
+ 2049 strings out of 494045
+ 27245 string characters out of 3148387
+ 85660 words of memory out of 3000000
+ 5323 multiletter control sequences out of 15000+200000
  20281 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,10n,24p,924b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -334,9 +344,9 @@ iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 148366 bytes).
+Output written on main.pdf (4 pages, 182370 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
