@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  20 JAN 2013 10:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2011.8.23)  23 JAN 2013 16:31
 entering extended mode
 **C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
 (C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/main.tex
@@ -179,18 +179,23 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 52.
- <Imgs/Orig_0412041242.jpg, id=1, 353.32pt x 240.9pt>
+
+Underfull \hbox (badness 2080) in paragraph at lines 66--67
+[]\OT1/ptm/m/n/10 Although back-ground sub-trac-tion via GMMs en-joys
+ []
+
+<Imgs/Orig_0412041242.jpg, id=1, 353.32pt x 240.9pt>
 File: Imgs/Orig_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/Orig_0412041242.jpg>
-Package pdftex.def Info: Imgs/Orig_0412041242.jpg used on input line 88.
+Package pdftex.def Info: Imgs/Orig_0412041242.jpg used on input line 81.
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_Intensity_0412041242.jpg, id=2, 353.32pt x 240.9pt>
 File: Imgs/SP_Intensity_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/SP_Intensity_0412041242.jpg>
-Package pdftex.def Info: Imgs/SP_Intensity_0412041242.jpg used on input line 95
+Package pdftex.def Info: Imgs/SP_Intensity_0412041242.jpg used on input line 88
 .
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
@@ -198,10 +203,10 @@ Package pdftex.def Info: Imgs/SP_Intensity_0412041242.jpg used on input line 95
 File: Imgs/SP_IMG_R_0412041242.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_R_0412041242.jpg>
-Package pdftex.def Info: Imgs/SP_IMG_R_0412041242.jpg used on input line 102.
+Package pdftex.def Info: Imgs/SP_IMG_R_0412041242.jpg used on input line 95.
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
-Overfull \hbox (3.74591pt too wide) in paragraph at lines 86--107
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 79--100
 [][] []  [] 
  []
 
@@ -209,14 +214,14 @@ Overfull \hbox (3.74591pt too wide) in paragraph at lines 86--107
 File: Imgs/Orig_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/Orig_1228021540.jpg>
-Package pdftex.def Info: Imgs/Orig_1228021540.jpg used on input line 117.
+Package pdftex.def Info: Imgs/Orig_1228021540.jpg used on input line 110.
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_IMG_R_1228021540.jpg, id=5, 353.32pt x 240.9pt>
 File: Imgs/SP_IMG_R_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_R_1228021540.jpg>
-Package pdftex.def Info: Imgs/SP_IMG_R_1228021540.jpg used on input line 124.
+Package pdftex.def Info: Imgs/SP_IMG_R_1228021540.jpg used on input line 117.
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
 <Imgs/SP_IMG_Reduced_1228021540.jpg, id=6, 353.32pt x 240.9pt>
@@ -224,10 +229,10 @@ File: Imgs/SP_IMG_Reduced_1228021540.jpg Graphic file (type jpg)
 
 <use Imgs/SP_IMG_Reduced_1228021540.jpg>
 Package pdftex.def Info: Imgs/SP_IMG_Reduced_1228021540.jpg used on input line 
-131.
+124.
 (pdftex.def)             Requested size: 157.91428pt x 85.3565pt.
 
-Overfull \hbox (3.74591pt too wide) in paragraph at lines 115--136
+Overfull \hbox (3.74591pt too wide) in paragraph at lines 108--129
 [][] []  [] 
  []
 
@@ -245,67 +250,67 @@ _IMG_R_0412041242.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/I
 mgs/Orig_1228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013
 /Imgs/SP_IMG_R_1228021540.jpg> <C:/Users/Pooya/Documents/Research/My_Papers/ICI
 P_2013/Imgs/SP_IMG_Reduced_1228021540.jpg>]
-Underfull \hbox (badness 1019) in paragraph at lines 157--158
+Underfull \hbox (badness 1019) in paragraph at lines 155--156
 []\OT1/ptm/m/n/10 After ob-tain-ing the sparse com-po-nent of each video
  []
 
 <Imgs/0112051333.png, id=18, 353.32pt x 240.9pt>
 File: Imgs/0112051333.png Graphic file (type png)
  <use Imgs/0112051333.png>
-Package pdftex.def Info: Imgs/0112051333.png used on input line 164.
+Package pdftex.def Info: Imgs/0112051333.png used on input line 162.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0112051333_gmm_rwg.png, id=19, 353.32pt x 240.9pt>
 File: Imgs/0112051333_gmm_rwg.png Graphic file (type png)
 
 <use Imgs/0112051333_gmm_rwg.png>
-Package pdftex.def Info: Imgs/0112051333_gmm_rwg.png used on input line 171.
+Package pdftex.def Info: Imgs/0112051333_gmm_rwg.png used on input line 169.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0112051333_rpca_rwg.png, id=20, 353.32pt x 240.9pt>
 File: Imgs/0112051333_rpca_rwg.png Graphic file (type png)
 
 <use Imgs/0112051333_rpca_rwg.png>
-Package pdftex.def Info: Imgs/0112051333_rpca_rwg.png used on input line 178.
+Package pdftex.def Info: Imgs/0112051333_rpca_rwg.png used on input line 176.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0112051333_grasta_rwg.png, id=21, 353.32pt x 240.9pt>
 File: Imgs/0112051333_grasta_rwg.png Graphic file (type png)
 
 <use Imgs/0112051333_grasta_rwg.png>
-Package pdftex.def Info: Imgs/0112051333_grasta_rwg.png used on input line 185.
+Package pdftex.def Info: Imgs/0112051333_grasta_rwg.png used on input line 183.
 
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0412041242.png, id=22, 353.32pt x 240.9pt>
 File: Imgs/0412041242.png Graphic file (type png)
  <use Imgs/0412041242.png>
-Package pdftex.def Info: Imgs/0412041242.png used on input line 200.
+Package pdftex.def Info: Imgs/0412041242.png used on input line 198.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0412041242_gmm_rwg.png, id=23, 353.32pt x 240.9pt>
 File: Imgs/0412041242_gmm_rwg.png Graphic file (type png)
 
 <use Imgs/0412041242_gmm_rwg.png>
-Package pdftex.def Info: Imgs/0412041242_gmm_rwg.png used on input line 207.
+Package pdftex.def Info: Imgs/0412041242_gmm_rwg.png used on input line 205.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0412041242_rpca_rwg.png, id=24, 353.32pt x 240.9pt>
 File: Imgs/0412041242_rpca_rwg.png Graphic file (type png)
 
 <use Imgs/0412041242_rpca_rwg.png>
-Package pdftex.def Info: Imgs/0412041242_rpca_rwg.png used on input line 214.
+Package pdftex.def Info: Imgs/0412041242_rpca_rwg.png used on input line 212.
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
 <Imgs/0412041242_grasta_rwg.png, id=25, 353.32pt x 240.9pt>
 File: Imgs/0412041242_grasta_rwg.png Graphic file (type png)
 
 <use Imgs/0412041242_grasta_rwg.png>
-Package pdftex.def Info: Imgs/0412041242_grasta_rwg.png used on input line 221.
+Package pdftex.def Info: Imgs/0412041242_grasta_rwg.png used on input line 219.
 
 (pdftex.def)             Requested size: 113.80869pt x 85.3565pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
@@ -313,7 +318,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--245
 File: Imgs/ROC_comp_curve_zoom.jpg Graphic file (type jpg)
 
 <use Imgs/ROC_comp_curve_zoom.jpg>
-Package pdftex.def Info: Imgs/ROC_comp_curve_zoom.jpg used on input line 251.
+Package pdftex.def Info: Imgs/ROC_comp_curve_zoom.jpg used on input line 249.
 (pdftex.def)             Requested size: 227.62009pt x 170.71423pt.
 
 (C:\Users\Pooya\Documents\Research\My_Papers\ICIP_2013\main.bbl [3 <C:/Users/Po
@@ -334,17 +339,17 @@ NG copy)> <C:/Users/Pooya/Documents/Research/My_Papers/ICIP_2013/Imgs/041204124
 Here is how much of TeX's memory you used:
  2049 strings out of 494045
  27245 string characters out of 3148387
- 85660 words of memory out of 3000000
+ 85662 words of memory out of 3000000
  5323 multiletter control sequences out of 15000+200000
  20281 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,10n,24p,924b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,24p,887b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program F
 iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 182370 bytes).
+Output written on main.pdf (4 pages, 182912 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
