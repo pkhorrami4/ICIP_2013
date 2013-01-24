@@ -226,22 +226,17 @@ After obtaining the sparse component of each video frame, we notice that they po
 %
 \end{figure}
 
-
-
-
-
-
-
-
-
 \section{Experimental Results}
-%\label{sec:pagestyle}
+For evaluation, we use a dataset provided by Toyota Motor Corp. consisting of accidents and near accidents in a busy intersection in Louisville, KY area.  Parts of this dataset is available in the TRIMARC dataset\cite{toyota_dataset}.  The dataset contains video clips of 116 accidents and 235 near accidents, each of them ranging in 10-30 seconds in duration.  The frames are of fairly low resolution (240$\mathbf{x}$320) In some of these videos, the camera sensor is defective resulting in washed out nighttime or off--color daytime images.  After pruning such cases, we have manually marked ground truth labels for all foreground pixels in one frame for each of the 273 remaining videos.  The labeled frame is precisely seven seconds prior to end of each video, where the incident has either just occurred or about to occur.  This makes sure that the intersection contains a fair amount of vehicles and provides some challenging cases of foreground sleep problem, where some vehicles became stationary after colliding.  In addition, the dataset collected over the span of five years, contains many challenging environmental conditions such as wet or snowy roads, varying levels of day and nighttime illumination and significant amounts of CCD sensor noise.
 
-
-
-(Cite Toyota Dataset?)\\
+We test our hypothesis empirically on this dataset by comparing our results to a baseline GMM\cite{zivkovic2004improved} algorithm.  The implementation is publicly available in OpenCV\cite{opencv_library}.  The parameters used for this particular GMM implementation were two Gaussian mixtures and 10 frames of history.  To get different operating points, we initialized the models with varying levels of foreground threshold corresponding to $\sigma \in \{1, 2, 3, 4, 5\}$, and ran the background subtractor from the beginning of the video until the frame with the ground truth label.
 
 When computing RPCA, we used the Inexact Augmented Lagrangian method (IALM) \cite{alm} provided by Yi Ma and his group at the University of Illinois - Urbana Champaign.
+
+We quantify the performance of different approaches in terms of receiver operating characteristic curves (ROC).  We treat the foreground background labeling as a pixel--wise binary classification problem.  The true positive rate denotes the ratio of foreground pixels correctly detected by the particular algorithm versus the total number of foreground pixels in the ground truth set.  Conversely, the false positive ratio corresponds to the ratio of background pixels mistakenly picked up as foreground versus the total number of background pixels in the ground truth set.
+%\label{sec:pagestyle}
+
+The ROC curve (Fig. \ref{fig:roc}) shows that the sparsity enforcing methods are better suited to handle adverse imaging conditions of the tested video shots.  One particular advantage is that GMM is fairly slow to adapt to changes, while the subspace methods can adapt more rapidly to global changes while still being able to maintain the foreground objects for some time after they have become stationary. We also provide some qualitative results in Figures 3 and 4 to illustrate some of the advantages.  In Figure 3, we can see that the some cars are assigned as background by the GMM algorithm, because the color separation between the background and the foreground does not make it above the threshold.  Whereas the majority of the foreground pixels are recovered by the subspace methods.  In Figure 4, we see that some lane markings are picked up as foreground by the GMM method, possibly due to small camera motion causing misalignment of the background model.  However the subspace methods are quick to adapt to such globally structural changes.
 
 \begin{figure}[htb]
 \begin{minipage}[b]{\linewidth}
@@ -251,12 +246,15 @@ When computing RPCA, we used the Inexact Augmented Lagrangian method (IALM) \cit
 %  \centerline{(}\medskip
 \end{minipage}
 
-\caption{ROC Comparison}
+\caption{\label{fig:roc}ROC Comparison}
 \label{fig:rocComp}
-%
 \end{figure}
 
 \section{Conclusions}
+We have demonstrated that under adverse imaging conditions, the limitations of commonly used Gaussian Mixture Models for background subtraction can be overcome by alternative robust methods that model the scene background as mixture of linear subspaces.  One important drawback of using subspace methods like RPCA is that the additional computational complexity brought on can be prohibitively expensive for real time processing under practical application conditions.  Thus we also evaluated the alternative GRASTA method, which has the ability to process fast on--line updates.  We have shown that, while some accuracy is sacrificed, the results obtained by GRASTA method is still largely favorable to GMM results.
+
+
+
 %\label{sec:typestyle}
 
 
