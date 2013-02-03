@@ -18,7 +18,7 @@
 % ---------------
 \name{Pooya Khorrami, Xingqian Xu, Mert Dikmen, Thomas S. Huang\thanks{This work was funded in part by the ONR grant N00014-12-1-0122. }}
 \address{University of Illinois - Urbana Champaign \\ 
-              %Department of Electrical and Computer Engineering\\
+              Department of Electrical and Computer Engineering\\
               Beckman Institute,  405 N. Matthews Avenue, Urbana IL, 61801, USA}
 %
 % For example:
@@ -73,7 +73,7 @@ In the case of stationary cameras, the high level of temporal redundancy between
 One of the most common subspace estimation techniques is Robust Principal Component Analysis (Robust PCA or RPCA) \cite{RPCA09} whose objective is to represent a data matrix (or video sequence) as the sum of a low-rank matrix (background) and a sparse matrix (foreground) via a convex optimization problem. Unfortunately, the algorithm is computationally expensive because it operates in batch on the entire sequence. To avoid this, one can use the Grassmannian Robust Adaptive Subspace Tracking Algorithm (GRASTA) by He et al. \cite{GRASTA12} which learns the low-rank subspace by subsampling the video frames and proceeds in an online fashion. While both methods have displayed great success, we will describe how performing Robust PCA on each of the video's color channels and using a reduced number of frames produces a new subspace estimation technique with more accurate results. 
 
 
-The remainder of this paper is organized as follows. Section 2 will describe the improvements made to the batch Robust PCA algorithm. Section 3 will present our experimental setup and findings. Section 4 will describe our conclusions and directions for future work.
+The remainder of this paper is organized as follows. Section 2 will describe the improvements made to the batch Robust PCA algorithm. Section 3 will present our experimental setup and findings. Section 4 will describe our conclusions.
 
 
 \begin{figure*}[htb]
@@ -154,9 +154,10 @@ Now that we have a protocol in place to better detect colored objects, we turn o
  
 In order to prevent this from happening, we reduce the number of frames used when computing Robust PCA by taking every Nth frame where N $\in \{ 10, 20, 30\}$. By reducing the number of frames in which the stationary object appears, we are making the object look like a sparse corruption and therefore less likely to enter the low-rank subspace modeling the background for the duration of the sampling period. The appearance of the two stationary cars in Figure \ref{fig:reduceComp}c verifies our hypothesis. The reader may have noticed that by using a reduced number of frames in Robust PCA, the remaining frames will not have their own low-rank and sparse components. This is not a problem given that the scene was captured using a stationary camera. For each frame, we can simply take the nearest background image and subtract it to extract the sparse component.
 
+%\vspace{-0.23in}
 \subsection{Post--processing}
 
-After obtaining the sparse component of each video frame, we notice that they possess a fair amount of speckled noise. A classical approach to de-noising an image is through shrinking the wavelet coefficients via a hard or soft threshold \cite{Donoho95}. We apply a hard threshold to the wavelet coefficients of each sparse image to obtain a smoother response to be used during evaluation.
+After obtaining the sparse component of each video frame, we notice that they possess a fair amount of speckled noise. A classical approach to de-noising an image is through shrinking the wavelet coefficients via a hard or soft threshold \cite{Donoho95}. We apply a hard threshold to the wavelet coefficients of each color channel's sparse image to obtain a smoother response to be used during evaluation.
 
 
 \begin{figure}[t]
@@ -189,7 +190,7 @@ After obtaining the sparse component of each video frame, we notice that they po
   \centerline{(d) Our Result}\medskip
 \end{minipage}
 
-\caption{Method Comparison I}
+\caption{Method Comparison I - (White - Ground Truth, Red - False Positive, Green -  True Positive)}
 \label{fig:methodComp1}
 %
 \end{figure}
@@ -225,7 +226,7 @@ After obtaining the sparse component of each video frame, we notice that they po
   \centerline{(d) Our Result}\medskip
 \end{minipage}
 
-\caption{Method Comparison II}
+\caption{Method Comparison II - (White - Ground Truth, Red - False Positive, Green -  True Positive)}
 \label{fig:methodComp2}
 %
 \end{figure}
@@ -238,12 +239,12 @@ We test our hypothesis empirically on this dataset by comparing our results to a
 \begin{figure}[htb]
 \begin{minipage}[b]{\linewidth}
   \centering
-  \centerline{\includegraphics[trim = 35mm 87mm 30mm 87mm, clip,  width=9.25cm, height = 7cm]{Imgs/ROC_comp_curve_zoom.pdf}}
+  \centerline{\includegraphics[trim = 35mm 87mm 30mm 92mm, clip,  width=9.25cm, height = 6.5cm]{Imgs/ROC_comp_curve_zoom.pdf}}
 %  \vspace{1.5cm}
 %  \centerline{(}\medskip
 \end{minipage}
 
-\caption{Method Comparison}
+\caption{Algorithm Comparison}
 \label{fig:roc}
 \end{figure}
 
@@ -253,19 +254,19 @@ When computing Robust PCA, we used the Inexact Augmented Lagrangian method (IALM
 We quantify the performance of different approaches in terms of receiver operating characteristic curves (ROC).  We treat the foreground background labeling as a pixel--wise binary classification problem.  The true positive rate denotes the ratio of foreground pixels correctly detected by the particular algorithm versus the total number of foreground pixels in the ground truth set.  Conversely, the false positive ratio corresponds to the ratio of background pixels mistakenly picked up as foreground versus the total number of background pixels in the ground truth set.
 %\label{sec:pagestyle}
 
-The ROC curves in Figure \ref{fig:roc} shows that the sparsity enforcing methods are better suited to handle adverse imaging conditions of the tested video shots.  One particular advantage is that GMMs are fairly slow to adapt to changes, while the subspace methods can adapt more rapidly to global changes while still being able to maintain the foreground objects for some time after they have become stationary. We also provide some qualitative results in Figures 3 and 4 to illustrate some of the advantages.  In Figure 3, we can see that the some cars are assigned as background by the GMM algorithm, because the color separation between the background and the foreground does not make it above the threshold.  Whereas the majority of the foreground pixels are recovered by the subspace methods.  In Figure 4, we see that some lane markings are picked up as foreground by the GMM method, possibly due to small camera motion causing misalignment of the background model.  However the subspace methods are able to capture such globally structural changes.
+The ROC curves in Figure \ref{fig:roc} shows that the sparsity enforcing methods are better suited to handle adverse imaging conditions of the tested video shots.  One particular advantage is that GMMs are fairly slow to adapt to changes, while the subspace methods can adapt more rapidly to global changes while still being able to maintain the foreground objects for some time after they have become stationary. We also provide some qualitative results in Figures \ref{fig:methodComp1} and \ref{fig:methodComp2} to illustrate some of the advantages.  In Figure \ref{fig:methodComp1}, we can see that the some cars are assigned as background by the GMM algorithm, because the color separation between the background and the foreground does not make it above the threshold.  Whereas the majority of the foreground pixels are recovered by the subspace methods.  In Figure \ref{fig:methodComp2}, we see that some lane markings are picked up as foreground by the GMM method, possibly due to small camera motion causing misalignment of the background model.  However the subspace methods are able to capture such globally structural changes.
 
 \begin{figure}[t]
 \begin{minipage}[b]{\linewidth}
   \centering
-  \centerline{\includegraphics[trim = 35mm 87mm 30mm 87mm, clip, width=9.25cm, height = 7cm]{Imgs/ROC_RPCA_IMP.pdf}}
+  \centerline{\includegraphics[trim = 35mm 87mm 30mm 92mm, clip, width=9.25cm, height =6.5cm]{Imgs/ROC_RPCA_IMP.pdf}}
 %  \vspace{1.5cm}
 %  \centerline{(}\medskip
 \end{minipage}
 
-\caption{Robust PCA Performance Gains}
+\caption{Performance Gains due to RPCA Modifications}
 \label{fig:roc2}
-\vspace{-0.15in}
+%\vspace{-0.15in}
 \end{figure}
 
 
