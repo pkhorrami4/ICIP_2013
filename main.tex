@@ -18,8 +18,8 @@
 % ---------------
 \name{Pooya Khorrami, Xingqian Xu, Mert Dikmen, Thomas S. Huang\thanks{This work was funded in part by the ONR grant N00014-12-1-0122. }}
 \address{University of Illinois - Urbana Champaign \\ 
-              Department of Electrical and Computer Engineering\\
-              Beckman Institute,  405 N. Matthews Avenue, Urbana IL, 61801}
+              %Department of Electrical and Computer Engineering\\
+              Beckman Institute,  405 N. Matthews Avenue, Urbana IL, 61801, USA}
 %
 % For example:
 % ------------
@@ -46,7 +46,7 @@
 \maketitle
 %
 \begin{abstract}
-Gaussian Mixture Models (GMMs) are one of the most popular methods used for background subtraction in video processing today. However, noisy or low-quality videos make learning the underlying background model difficult and often lead to inaccurate foreground masks. To combat this, we propose representing the background using a low-rank subspace. In this paper, we show how subspace estimation techniques such as Robust Principal Component Analysis (Robust PCA) outperform GMMs on noisy traffic video sequences.
+Gaussian Mixture Models (GMMs) are one of the most popular methods used for background subtraction in video processing today. However, noisy or low-quality videos make learning the underlying background model difficult and often lead to inaccurate foreground masks. To combat this, we propose representing the background using a low-rank subspace. In this paper, we demonstrate how subspace estimation techniques such as Robust Principal Component Analysis (Robust PCA) outperform GMMs on noisy traffic video sequences. We also apply some modifications to the original Robust PCA algorithm and show how they lead to additional detection accuracy.
 \end{abstract}
 %
 \begin{keywords}
@@ -158,7 +158,7 @@ After obtaining the sparse component of each video frame, we notice that they po
 
 
 \begin{figure}[t]
-
+\centering
 \begin{minipage}[b]{0.48\linewidth}
   \centering
   \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0112051333.jpg}}
@@ -194,7 +194,7 @@ After obtaining the sparse component of each video frame, we notice that they po
 
 
 \begin{figure}[t]
-
+\centering
 \begin{minipage}[b]{0.48\linewidth}
   \centering
   \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0412041242.jpg}}
@@ -236,7 +236,7 @@ We test our hypothesis empirically on this dataset by comparing our results to a
 \begin{figure}[htb]
 \begin{minipage}[b]{\linewidth}
   \centering
-  \centerline{\includegraphics[width=9cm, height = 6.5cm]{Imgs/ROC_comp_curve_zoom.png}}
+  \centerline{\includegraphics[trim = 35mm 87mm 30mm 87mm, clip,  width=9.25cm, height = 7cm]{Imgs/ROC_comp_curve_zoom.pdf}}
 %  \vspace{1.5cm}
 %  \centerline{(}\medskip
 \end{minipage}
@@ -251,7 +251,7 @@ When computing Robust PCA, we used the Inexact Augmented Lagrangian method (IALM
 We quantify the performance of different approaches in terms of receiver operating characteristic curves (ROC).  We treat the foreground background labeling as a pixel--wise binary classification problem.  The true positive rate denotes the ratio of foreground pixels correctly detected by the particular algorithm versus the total number of foreground pixels in the ground truth set.  Conversely, the false positive ratio corresponds to the ratio of background pixels mistakenly picked up as foreground versus the total number of background pixels in the ground truth set.
 %\label{sec:pagestyle}
 
-The ROC curves in Figure \ref{fig:roc} shows that the sparsity enforcing methods are better suited to handle adverse imaging conditions of the tested video shots.  One particular advantage is that GMM is fairly slow to adapt to changes, while the subspace methods can adapt more rapidly to global changes while still being able to maintain the foreground objects for some time after they have become stationary. We also provide some qualitative results in Figures 3 and 4 to illustrate some of the advantages.  In Figure 3, we can see that the some cars are assigned as background by the GMM algorithm, because the color separation between the background and the foreground does not make it above the threshold.  Whereas the majority of the foreground pixels are recovered by the subspace methods.  In Figure 4, we see that some lane markings are picked up as foreground by the GMM method, possibly due to small camera motion causing misalignment of the background model.  However the subspace methods are quick to adapt to such globally structural changes.
+The ROC curves in Figure \ref{fig:roc} shows that the sparsity enforcing methods are better suited to handle adverse imaging conditions of the tested video shots.  One particular advantage is that GMMs are fairly slow to adapt to changes, while the subspace methods can adapt more rapidly to global changes while still being able to maintain the foreground objects for some time after they have become stationary. We also provide some qualitative results in Figures 3 and 4 to illustrate some of the advantages.  In Figure 3, we can see that the some cars are assigned as background by the GMM algorithm, because the color separation between the background and the foreground does not make it above the threshold.  Whereas the majority of the foreground pixels are recovered by the subspace methods.  In Figure 4, we see that some lane markings are picked up as foreground by the GMM method, possibly due to small camera motion causing misalignment of the background model.  However the subspace methods are quick to adapt to such globally structural changes.
 
 
 
@@ -259,17 +259,18 @@ The ROC curves in Figure \ref{fig:roc} shows that the sparsity enforcing methods
 \begin{figure}[t]
 \begin{minipage}[b]{\linewidth}
   \centering
-  \centerline{\includegraphics[width=9cm, height = 6.5cm]{Imgs/ROC_RPCA.png}}
+  \centerline{\includegraphics[trim = 35mm 87mm 30mm 87mm, clip, width=9.25cm, height = 7cm]{Imgs/ROC_RPCA_IMP.pdf}}
 %  \vspace{1.5cm}
 %  \centerline{(}\medskip
 \end{minipage}
 
 \caption{Robust PCA Performance Gains}
 \label{fig:roc2}
+\vspace{-0.15in}
 \end{figure}
 
 
-Figures \ref{fig:methodComp1}, \ref{fig:methodComp2} and \ref{fig:roc} also show how our algorithm outperforms all of the previously proposed methods by a fair margin, both quantitatively and qualitatively. In Figure \ref{fig:roc2}, we show how each of the modifications we proposed to the original Robust PCA algorithm leads to incremental improvements in the algorithm's performance. The blue and red curves show the performance of batch Roust PCA when using intensity and color, respectively. The black and magenta curves show how using fewer and fewer frames when learning the subspace further improves the performance by reducing the effect of the foreground aperture problem. The black curve represents using every 10th frame (30 frames total) while the magenta curve represents using every 20th frame (15 frames total). 
+Figures \ref{fig:methodComp1}, \ref{fig:methodComp2} and \ref{fig:roc} also indicate how our algorithm outperforms all of the previously proposed methods by a fair margin, both quantitatively and qualitatively. In Figure \ref{fig:roc2}, we show how each of the modifications we proposed to the original Robust PCA algorithm leads to incremental improvements in the algorithm's performance. The blue and red curves show the performance of batch Roust PCA when using intensity and color, respectively. The black and magenta curves show how using fewer and fewer frames when learning the subspace further improves the performance by reducing the effect of the foreground aperture problem. The black curve represents using every 10th frame (30 frames total) while the magenta curve represents using every 20th frame (15 frames total). 
 
 
 
