@@ -164,28 +164,28 @@ After obtaining the sparse component of each video frame, we notice that they po
 \centering
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0112051333.jpg}}
+  \centerline{\includegraphics[width=4cm, height=2.8cm]{Imgs/0112051333.jpg}}
 %  \vspace{2.0cm}
   \centerline{(a) Ground Truth Labels}\medskip
 \end{minipage}
 %\hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0112051333_gmm_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height=2.8cm]{Imgs/0112051333_gmm_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(b) GMM Result}\medskip
 \end{minipage}
 
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height =3cm]{Imgs/0112051333_grasta_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height =2.8cm]{Imgs/0112051333_grasta_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(c) GRASTA Result}\medskip
 \end{minipage}
 %\hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height = 3cm]{Imgs/0112051333_rpca_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height = 2.8cm]{Imgs/0112051333_rpca_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(d) Our Result}\medskip
 \end{minipage}
@@ -200,28 +200,28 @@ After obtaining the sparse component of each video frame, we notice that they po
 \centering
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0412041242.jpg}}
+  \centerline{\includegraphics[width=4cm, height=2.8cm]{Imgs/0412041242.jpg}}
 %  \vspace{2.0cm}
   \centerline{(a) Ground Truth Labels}\medskip
 \end{minipage}
 %\hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height=3cm]{Imgs/0412041242_gmm_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height=2.8cm]{Imgs/0412041242_gmm_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(b) GMM Result}\medskip
 \end{minipage}
 
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height =3cm]{Imgs/0412041242_grasta_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height =2.8cm]{Imgs/0412041242_grasta_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(c) GRASTA Result}\medskip
 \end{minipage}
 %\hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\includegraphics[width=4cm, height = 3cm]{Imgs/0412041242_rpca_rwg.png}}
+  \centerline{\includegraphics[width=4cm, height = 2.8cm]{Imgs/0412041242_rpca_rwg.png}}
 %  \vspace{1.5cm}
   \centerline{(d) Our Result}\medskip
 \end{minipage}
@@ -232,7 +232,7 @@ After obtaining the sparse component of each video frame, we notice that they po
 \end{figure}
 
 \section{Experimental Results}
-For evaluation, we use a dataset provided by Toyota Motor Corp. consisting of accidents and near accidents in a busy intersection in Louisville, KY area.  Parts of this dataset is available in the TRIMARC dataset\cite{toyota_dataset}.  The dataset contains video clips of 116 accidents and 235 near accidents,  ranging 10-30 seconds in duration.  The frames are of fairly low resolution (240$\mathbf{x}$320). In some of these videos, the camera sensor is defective resulting in washed out nighttime or off--color daytime images.  After pruning such cases, we manually marked ground truth labels for all foreground pixels in one frame for each of the 272 remaining videos.  The labeled frames are precisely seven seconds prior to end of each video, where the incident has either just occurred or is about to occur.  This makes sure that the intersection contains a fair amount of vehicles and provides some challenging cases, where some vehicles became stationary after colliding.  In addition, the dataset collected over the span of five years, contains many challenging environmental conditions such as wet or snowy roads, varying levels of day and nighttime illumination and significant amounts of CCD sensor noise. These annotations are  publicly available at \cite{datasetLink}. 
+For evaluation, we use a dataset provided by Toyota Motor Corp. consisting of accidents and near accidents in a busy intersection in Louisville, KY area.  Parts of this dataset is available in the TRIMARC dataset\cite{toyota_dataset}.  The dataset contains video clips of 116 accidents and 235 near accidents,  ranging 10-30 seconds in duration.  The frames are of fairly low resolution (240$\mathbf{x}$320). In some of these videos, the camera sensor is defective resulting in washed out nighttime or off--color daytime images.  After pruning such cases, we manually marked ground truth labels for all foreground pixels in one frame for each of the 272 remaining videos.  The labeled frames are precisely seven seconds prior to end of each video, where the incident has either just occurred or is about to occur.  This makes sure that the intersection contains a fair amount of vehicles and provides some challenging cases where some vehicles became stationary after colliding.  In addition, the dataset, collected over the span of five years, contains many challenging environmental conditions such as wet or snowy roads, varying levels of day and nighttime illumination and significant amounts of CCD sensor noise. These annotations are  publicly available at \cite{datasetLink}. 
 
 
 We test our hypothesis empirically on this dataset by comparing our results to a baseline GMM\cite{ZivGMM} algorithm.  The implementation is publicly available in OpenCV\cite{opencv_library}.  The parameters used for this particular GMM implementation were two Gaussian mixtures and 10 frames of history.  To get different operating points, we initialized the models with varying levels of foreground threshold corresponding to $\sigma \in \{0.5, 1, 2, 3, 4, 5\}$, and ran the background subtractor from the beginning of the video until the frame with the ground truth label.
