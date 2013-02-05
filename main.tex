@@ -12,14 +12,14 @@
 
 % Title.
 % ------
-\title{Background Subtraction in Low-Quality Videos\\ with Subspace Estimation}
+\title{Background Subtraction in Low-Quality Videos\\ using Subspace Estimation}
 %
 % Single address.
 % ---------------
 \name{Pooya Khorrami, Xingqian Xu, Mert Dikmen, Thomas S. Huang\thanks{This work was funded in part by the ONR grant N00014-12-1-0122. }}
 \address{University of Illinois - Urbana Champaign \\ 
               %Department of Electrical and Computer Engineering\\
-              Beckman Institute,  405 N. Matthews Avenue, Urbana IL, 61801, USA}
+              Beckman Institute,  405 N. Mathews Avenue, Urbana IL, 61801, USA}
 %
 % For example:
 % ------------
@@ -232,7 +232,8 @@ After obtaining the sparse component of each video frame, we notice that they po
 \end{figure}
 
 \section{Experimental Results}
-For evaluation, we use a dataset provided by Toyota Motor Corp. consisting of accidents and near accidents in a busy intersection in Louisville, KY area.  Parts of this dataset is available in the TRIMARC dataset\cite{toyota_dataset}.  The dataset contains video clips of 116 accidents and 235 near accidents, each of them ranging in 10-30 seconds in duration.  The frames are of fairly low resolution (240$\mathbf{x}$320). In some of these videos, the camera sensor is defective resulting in washed out nighttime or off--color daytime images.  After pruning such cases, we have manually marked ground truth labels for all foreground pixels in one frame for each of the 273 remaining videos.  The labeled frame is precisely seven seconds prior to end of each video, where the incident has either just occurred or about to occur.  This makes sure that the intersection contains a fair amount of vehicles and provides some challenging cases, where some vehicles became stationary after colliding.  In addition, the dataset collected over the span of five years, contains many challenging environmental conditions such as wet or snowy roads, varying levels of day and nighttime illumination and significant amounts of CCD sensor noise.
+For evaluation, we use a dataset provided by Toyota Motor Corp. consisting of accidents and near accidents in a busy intersection in Louisville, KY area.  Parts of this dataset is available in the TRIMARC dataset\cite{toyota_dataset}.  The dataset contains video clips of 116 accidents and 235 near accidents,  ranging 10-30 seconds in duration.  The frames are of fairly low resolution (240$\mathbf{x}$320). In some of these videos, the camera sensor is defective resulting in washed out nighttime or off--color daytime images.  After pruning such cases, we manually marked ground truth labels for all foreground pixels in one frame for each of the 272 remaining videos.  The labeled frames are precisely seven seconds prior to end of each video, where the incident has either just occurred or is about to occur.  This makes sure that the intersection contains a fair amount of vehicles and provides some challenging cases, where some vehicles became stationary after colliding.  In addition, the dataset collected over the span of five years, contains many challenging environmental conditions such as wet or snowy roads, varying levels of day and nighttime illumination and significant amounts of CCD sensor noise. These annotations are  publicly available at \cite{datasetLink}. 
+
 
 We test our hypothesis empirically on this dataset by comparing our results to a baseline GMM\cite{ZivGMM} algorithm.  The implementation is publicly available in OpenCV\cite{opencv_library}.  The parameters used for this particular GMM implementation were two Gaussian mixtures and 10 frames of history.  To get different operating points, we initialized the models with varying levels of foreground threshold corresponding to $\sigma \in \{0.5, 1, 2, 3, 4, 5\}$, and ran the background subtractor from the beginning of the video until the frame with the ground truth label.
 
@@ -249,7 +250,7 @@ We test our hypothesis empirically on this dataset by comparing our results to a
 \end{figure}
 
 
-When computing Robust PCA, we used the Inexact Augmented Lagrangian method (IALM) \cite{alm} provided by Yi Ma and his group at the University of Illinois - Urbana Champaign. For GRASTA, we used the code provided by the authors \cite{grastaCode}. We trained the initial background model by taking 50 frames and subsampling 30$\%$ of the pixels while iterating 10 times. Then, during evaluation we applied the learned subspace and subsampled 20$\%$ of the pixels in the new frames. For our method, we performed Robust PCA on each of the color channels and took every 20th frame for training. Then for every testing frame, we used the background frame closest to it in time to extract the foreground. Since each video sequence was approximately 300 frames in length, taking every 20th frame corresponded to training on 15 frames in total. We took every 20th frame to ensure that both our method and GRASTA used the same number of frames during training since GRASTA subsampled 30$\%$ of the 50 training frames which is equal to 15 frames worth of pixels.
+When computing Robust PCA, we used the Inexact Augmented Lagrangian method (IALM) \cite{alm} \cite{rpcaCode} with $\lambda = \frac{1}{\sqrt{MN}}$ where each frame is $M\times N $ pixels. For GRASTA, we used the code provided on the author's website \cite{grastaCode}. We trained the initial background model by taking 50 frames and subsampling 30$\%$ of the pixels while iterating 10 times. Then, during evaluation we applied the learned subspace and subsampled 20$\%$ of the pixels in the new frames. For our method, we performed Robust PCA on each of the color channels and took every 20th frame for training. Then for every testing frame, we used the background frame closest to it in time to extract the foreground. Since each video sequence was approximately 300 frames in length, taking every 20th frame corresponded to training on 15 frames in total. We took every 20th frame to ensure that both our method and GRASTA used the same number of frames during training since GRASTA subsampled 30$\%$ of the 50 training frames which is equal to 15 frames worth of pixels.
 
 We quantify the performance of different approaches in terms of receiver operating characteristic curves (ROC).  We treat the foreground background labeling as a pixel--wise binary classification problem.  The true positive rate denotes the ratio of foreground pixels correctly detected by the particular algorithm versus the total number of foreground pixels in the ground truth set.  Conversely, the false positive ratio corresponds to the ratio of background pixels mistakenly picked up as foreground versus the total number of background pixels in the ground truth set.
 %\label{sec:pagestyle}
